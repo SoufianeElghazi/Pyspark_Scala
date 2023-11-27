@@ -1,0 +1,1146 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.sql.{SparkSession, DataFrame}\nval spark \u003d SparkSession.builder.appName(\"Flights_scala\").getOrCreate()",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:09:30.853",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.{SparkSession, DataFrame}\n\u001b[1m\u001b[34mspark\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.SparkSession\u001b[0m \u003d org.apache.spark.sql.SparkSession@f9e525\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701032873914_1013403378",
+      "id": "paragraph_1701032873914_1013403378",
+      "dateCreated": "2023-11-26 22:07:53.915",
+      "dateStarted": "2023-11-26 22:09:31.013",
+      "dateFinished": "2023-11-26 22:11:29.392",
+      "status": "FINISHED"
+    },
+    {
+      "text": "var file \u003d\"file:///home/soufiane/Bureau/Spark_TP2/flights20170102.json\"\nval df \u003d spark.read.format(\"json\").option(\"inferSchema\", \"true\").load(file) \ndf.createOrReplaceTempView(\"flights\")\ndf.show(10)",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:10:56.209",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------+-------+----------+----------+----------+--------------+--------+----+------+----+------+\n|                 _id|arrdelay|carrier|crsarrtime|crsdephour|crsdeptime|crselapsedtime|depdelay|dest|  dist|dofW|origin|\n+--------------------+--------+-------+----------+----------+----------+--------------+--------+----+------+----+------+\n|AA_2017-01-01_ATL...|     0.0|     AA|      1912|        17|      1700|         132.0|     0.0| LGA| 762.0|   7|   ATL|\n|AA_2017-01-01_LGA...|     0.0|     AA|      1620|        13|      1343|         157.0|     0.0| ATL| 762.0|   7|   LGA|\n|AA_2017-01-01_MIA...|    10.0|     AA|      1137|         9|       939|         118.0|     0.0| ATL| 594.0|   7|   MIA|\n|AA_2017-01-01_ORD...|     0.0|     AA|        26|        20|      2020|         186.0|     0.0| MIA|1197.0|   7|   ORD|\n|AA_2017-01-01_LGA...|     0.0|     AA|      1017|         7|       700|         197.0|     0.0| MIA|1096.0|   7|   LGA|\n|AA_2017-01-01_ORD...|     0.0|     AA|      1527|        13|      1345|         162.0|     0.0| DEN| 888.0|   7|   ORD|\n|AA_2017-01-01_DEN...|     0.0|     AA|      1649|        11|      1100|         229.0|     0.0| MIA|1709.0|   7|   DEN|\n|AA_2017-01-01_MIA...|     0.0|     AA|       949|         7|       720|         269.0|     7.0| DEN|1709.0|   7|   MIA|\n|AA_2017-01-01_DEN...|     0.0|     AA|      1600|        12|      1235|         145.0|     0.0| ORD| 888.0|   7|   DEN|\n|AA_2017-01-01_ORD...|     3.0|     AA|      1145|        10|      1005|         160.0|     5.0| DEN| 888.0|   7|   ORD|\n+--------------------+--------+-------+----------+----------+----------+--------------+--------+----+------+----+------+\nonly showing top 10 rows\n\n\u001b[1m\u001b[34mfile\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d file:///home/soufiane/Bureau/Spark_TP2/flights20170102.json\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [_id: string, arrdelay: double ... 10 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d0"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d1"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701032970944_1033420913",
+      "id": "paragraph_1701032970944_1033420913",
+      "dateCreated": "2023-11-26 22:09:30.948",
+      "dateStarted": "2023-11-26 22:10:56.463",
+      "dateFinished": "2023-11-26 22:12:03.464",
+      "status": "FINISHED"
+    },
+    {
+      "text": "import org.apache.spark.sql.functions._\ndf.filter($\"crsdephour\" \u003d\u003d\u003d 10).show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:12:19.912",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------+-------+----------+----------+----------+--------------+--------+----+------+----+------+\n|                 _id|arrdelay|carrier|crsarrtime|crsdephour|crsdeptime|crselapsedtime|depdelay|dest|  dist|dofW|origin|\n+--------------------+--------+-------+----------+----------+----------+--------------+--------+----+------+----+------+\n|AA_2017-01-01_ORD...|     3.0|     AA|      1145|        10|      1005|         160.0|     5.0| DEN| 888.0|   7|   ORD|\n|AA_2017-01-01_MIA...|     0.0|     AA|      1231|        10|      1005|         206.0|     4.0| ORD|1197.0|   7|   MIA|\n|DL_2017-01-01_ORD...|     0.0|     DL|      1300|        10|      1000|         120.0|     2.0| ATL| 606.0|   7|   ORD|\n|DL_2017-01-01_DEN...|     0.0|     DL|      1524|        10|      1035|         169.0|     4.0| ATL|1199.0|   7|   DEN|\n|DL_2017-01-01_DEN...|     0.0|     DL|      1624|        10|      1045|         219.0|     0.0| LGA|1620.0|   7|   DEN|\n+--------------------+--------+-------+----------+----------+----------+--------------+--------+----+------+----+------+\nonly showing top 5 rows\n\nimport org.apache.spark.sql.functions._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d2"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701033056319_253548821",
+      "id": "paragraph_1701033056319_253548821",
+      "dateCreated": "2023-11-26 22:10:56.320",
+      "dateStarted": "2023-11-26 22:12:19.978",
+      "dateFinished": "2023-11-26 22:12:26.062",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df.filter($\"crsdephour\" \u003d\u003d\u003d 10 \u0026\u0026 $\"depdelay\" \u003e 40).show(10)",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:25:26.508",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------+-------+----------+----------+----------+--------------+--------+----+------+----+------+\n|                 _id|arrdelay|carrier|crsarrtime|crsdephour|crsdeptime|crselapsedtime|depdelay|dest|  dist|dofW|origin|\n+--------------------+--------+-------+----------+----------+----------+--------------+--------+----+------+----+------+\n|UA_2017-01-01_EWR...|    55.0|     UA|      1319|        10|      1042|         157.0|    70.0| ATL| 746.0|   7|   EWR|\n|AA_2017-01-01_ATL...|   141.0|     AA|      1106|        10|       959|         127.0|   137.0| ORD| 606.0|   7|   ATL|\n|AA_2017-01-02_ORD...|   319.0|     AA|      1314|        10|      1034|         280.0|   294.0| SFO|1846.0|   1|   ORD|\n|WN_2017-01-02_SFO...|   118.0|     WN|      1315|        10|       950|         145.0|   115.0| DEN| 967.0|   1|   SFO|\n|AA_2017-01-02_BOS...|    59.0|     AA|      1215|        10|      1015|         180.0|    45.0| ORD| 867.0|   1|   BOS|\n|UA_2017-01-02_IAH...|   160.0|     UA|      1349|        10|      1025|         144.0|   128.0| MIA| 964.0|   1|   IAH|\n|UA_2017-01-02_IAH...|    39.0|     UA|      1442|        10|      1020|         202.0|    53.0| EWR|1400.0|   1|   IAH|\n|UA_2017-01-02_DEN...|    30.0|     UA|      1326|        10|      1004|         142.0|    42.0| IAH| 862.0|   1|   DEN|\n|UA_2017-01-02_IAH...|    46.0|     UA|      1251|        10|      1015|         156.0|    63.0| ORD| 925.0|   1|   IAH|\n|UA_2017-01-02_IAH...|   129.0|     UA|      1237|        10|      1015|         262.0|   134.0| SFO|1635.0|   1|   IAH|\n+--------------------+--------+-------+----------+----------+----------+--------------+--------+----+------+----+------+\nonly showing top 10 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d3"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701033139932_870500617",
+      "id": "paragraph_1701033139932_870500617",
+      "dateCreated": "2023-11-26 22:12:19.934",
+      "dateStarted": "2023-11-26 22:25:26.518",
+      "dateFinished": "2023-11-26 22:25:30.969",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df.groupBy(\"carrier\").count().show()",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:27:12.402",
+      "progress": 97,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-----+\n|carrier|count|\n+-------+-----+\n|     UA|18873|\n|     AA|10031|\n|     DL|10055|\n|     WN| 2389|\n+-------+-----+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d4"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d5"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d6"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d7"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d8"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701033926516_644014531",
+      "id": "paragraph_1701033926516_644014531",
+      "dateCreated": "2023-11-26 22:25:26.516",
+      "dateStarted": "2023-11-26 22:27:12.417",
+      "dateFinished": "2023-11-26 22:27:33.008",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df.groupBy(\"carrier\").agg(\"depdelay\" -\u003e \"max\", \"depdelay\" -\u003e \"min\", \"crsdeptime\" -\u003e \"sum\").show",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:27:28.753",
+      "progress": 97,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-------------+-------------+---------------+\n|carrier|max(depdelay)|min(depdelay)|sum(crsdeptime)|\n+-------+-------------+-------------+---------------+\n|     UA|       1138.0|          0.0|       24267859|\n|     AA|       1440.0|          0.0|       13226373|\n|     DL|       1185.0|          0.0|       13318833|\n|     WN|        375.0|          0.0|        3104545|\n+-------+-------------+-------------+---------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d9"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d10"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d11"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d12"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d13"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034032407_1868410458",
+      "id": "paragraph_1701034032407_1868410458",
+      "dateCreated": "2023-11-26 22:27:12.407",
+      "dateStarted": "2023-11-26 22:27:28.824",
+      "dateFinished": "2023-11-26 22:27:49.717",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df.filter($\"arrdelay\" \u003e40 || $\"depdelay\"\u003e 40).groupBy(\"dest\").count().orderBy(desc(\"count\")).show()",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:27:52.170",
+      "progress": 94,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+-----+\n|dest|count|\n+----+-----+\n| SFO|  926|\n| EWR|  699|\n| ORD|  670|\n| LGA|  647|\n| ATL|  616|\n| DEN|  462|\n| MIA|  432|\n| BOS|  393|\n| IAH|  375|\n+----+-----+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d14"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034048810_1994884450",
+      "id": "paragraph_1701034048810_1994884450",
+      "dateCreated": "2023-11-26 22:27:28.810",
+      "dateStarted": "2023-11-26 22:27:52.212",
+      "dateFinished": "2023-11-26 22:28:07.592",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df.cache\ndf.createOrReplaceTempView(\"flights\")\nspark.catalog.cacheTable(\"flights\")\nspark.sql(\"select carrier, origin, dest, depdelay, crsdephour, dist, dofw from flights where depdelay\u003e 40 order by depdelay desc limit 5\").show",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:28:43.396",
+      "progress": 33,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------+----+--------+----------+------+----+\n|carrier|origin|dest|depdelay|crsdephour|  dist|dofw|\n+-------+------+----+--------+----------+------+----+\n|     AA|   SFO| ORD|  1440.0|         8|1846.0|   3|\n|     DL|   BOS| ATL|  1185.0|        17| 946.0|   6|\n|     UA|   DEN| EWR|  1138.0|        12|1605.0|   4|\n|     DL|   ORD| ATL|  1087.0|        19| 606.0|   7|\n|     UA|   MIA| EWR|  1072.0|        20|1085.0|   1|\n+-------+------+----+--------+----------+------+----+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d15"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034072183_1720033423",
+      "id": "paragraph_1701034072183_1720033423",
+      "dateCreated": "2023-11-26 22:27:52.183",
+      "dateStarted": "2023-11-26 22:28:43.429",
+      "dateFinished": "2023-11-26 22:28:54.659",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df.select($\"carrier\", $\"origin\", $\"dest\", $\"depdelay\", $\"crsdephour\", $\"dist\", $\"dofw\") .filter($\"depdelay\"\u003e 40).orderBy(desc( \"depdelay\")).show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:29:04.331",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------+----+--------+----------+------+----+\n|carrier|origin|dest|depdelay|crsdephour|  dist|dofw|\n+-------+------+----+--------+----------+------+----+\n|     AA|   SFO| ORD|  1440.0|         8|1846.0|   3|\n|     DL|   BOS| ATL|  1185.0|        17| 946.0|   6|\n|     UA|   DEN| EWR|  1138.0|        12|1605.0|   4|\n|     DL|   ORD| ATL|  1087.0|        19| 606.0|   7|\n|     UA|   MIA| EWR|  1072.0|        20|1085.0|   1|\n+-------+------+----+--------+----------+------+----+\nonly showing top 5 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d16"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034123405_2127836345",
+      "id": "paragraph_1701034123405_2127836345",
+      "dateCreated": "2023-11-26 22:28:43.406",
+      "dateStarted": "2023-11-26 22:29:04.413",
+      "dateFinished": "2023-11-26 22:29:10.144",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df.groupBy(\"carrier\").agg(avg(\"depdelay\")).show",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:29:21.474",
+      "progress": 85,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------------------+\n|carrier|     avg(depdelay)|\n+-------+------------------+\n|     UA|17.477878450696764|\n|     AA| 10.45768118831622|\n|     DL|15.316061660865241|\n|     WN|13.491000418585182|\n+-------+------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d17"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d18"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d19"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d20"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d21"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034144339_1318031370",
+      "id": "paragraph_1701034144339_1318031370",
+      "dateCreated": "2023-11-26 22:29:04.339",
+      "dateStarted": "2023-11-26 22:29:21.495",
+      "dateFinished": "2023-11-26 22:29:33.015",
+      "status": "FINISHED"
+    },
+    {
+      "text": "z.show(spark.sql(\"select carrier, avg(depdelay) from flights group by carrier\"))\n//display(spark.sql(\"select carrier, avg(depdelay) from flights group by carrier\"))\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:33:47.569",
+      "progress": 90,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "carrier": "string",
+                      "avg(depdelay)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "carrier",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "avg(depdelay)",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "carrier\tavg(depdelay)\nUA\t17.477878450696764\nAA\t10.45768118831622\nDL\t15.316061660865241\nWN\t13.491000418585182\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d22"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d23"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d24"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d25"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d26"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034161479_1610227110",
+      "id": "paragraph_1701034161479_1610227110",
+      "dateCreated": "2023-11-26 22:29:21.479",
+      "dateStarted": "2023-11-26 22:32:18.297",
+      "dateFinished": "2023-11-26 22:32:27.228",
+      "status": "FINISHED"
+    },
+    {
+      "text": "z.show(df.filter($\"depdelay\"\u003e 48).groupBy(\"carrier\").count.orderBy (desc(\"count\")))",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:36:16.205",
+      "progress": 97,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "carrier": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "carrier",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "carrier\tcount\nUA\t2094\nDL\t911\nAA\t642\nWN\t201\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d27"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034200572_205233110",
+      "id": "paragraph_1701034200572_205233110",
+      "dateCreated": "2023-11-26 22:30:00.572",
+      "dateStarted": "2023-11-26 22:35:30.666",
+      "dateFinished": "2023-11-26 22:35:41.088",
+      "status": "FINISHED"
+    },
+    {
+      "text": "z.show(spark.sql(\"select dofw, count (depdelay) from flights where depdelay\u003e 40 group by dofw\"))",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:37:14.629",
+      "progress": 93,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "dofw": "string",
+                      "count(depdelay)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "dofw",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count(depdelay)",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "dofw\tcount(depdelay)\n7\t701\n6\t424\n5\t579\n1\t940\n3\t482\n2\t712\n4\t626\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d28"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d29"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d30"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d31"
+            },
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d32"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034530651_665071250",
+      "id": "paragraph_1701034530651_665071250",
+      "dateCreated": "2023-11-26 22:35:30.651",
+      "dateStarted": "2023-11-26 22:36:58.831",
+      "dateFinished": "2023-11-26 22:37:06.630",
+      "status": "FINISHED"
+    },
+    {
+      "text": "z.show(spark.sql(\"select crsdephour, count(depdelay) from flights where depdelay \u003e 48 group by crsdephour order by crsdephour\"))",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:40:52.277",
+      "progress": 91,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "crsdephour": "string",
+                      "count(depdelay)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "crsdephour",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count(depdelay)",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "crsdephour\tcount(depdelay)\n0\t8\n1\t1\n5\t14\n6\t58\n7\t89\n8\t160\n9\t151\n10\t239\n11\t238\n12\t207\n13\t279\n14\t306\n15\t279\n16\t317\n17\t419\n18\t346\n19\t327\n20\t189\n21\t134\n22\t57\n23\t23\n24\t7\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d33"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034618826_930995265",
+      "id": "paragraph_1701034618826_930995265",
+      "dateCreated": "2023-11-26 22:36:58.826",
+      "dateStarted": "2023-11-26 22:39:12.301",
+      "dateFinished": "2023-11-26 22:39:22.912",
+      "status": "FINISHED"
+    },
+    {
+      "text": "z.show(spark.sql(\"select origin, count (depdelay) from flights where depdelay\u003e 40 group by origin ORDER BY count (depdelay) desc\"))",
+      "user": "anonymous",
+      "dateUpdated": "2023-11-26 22:42:17.688",
+      "progress": 96,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "origin": "string",
+                      "count(depdelay)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "origin",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count(depdelay)",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "origin\tcount(depdelay)\nORD\t679\nATL\t637\nSFO\t542\nEWR\t518\nDEN\t484\nIAH\t447\nLGA\t432\nMIA\t429\nBOS\t296\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.126.129:4040/jobs/job?id\u003d34"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034752294_893829873",
+      "id": "paragraph_1701034752294_893829873",
+      "dateCreated": "2023-11-26 22:39:12.294",
+      "dateStarted": "2023-11-26 22:42:03.331",
+      "dateFinished": "2023-11-26 22:42:12.190",
+      "status": "FINISHED"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1701034923326_324845314",
+      "id": "paragraph_1701034923326_324845314",
+      "dateCreated": "2023-11-26 22:42:03.326",
+      "status": "READY"
+    }
+  ],
+  "name": "TP2_Scala_Zippelin_flights",
+  "id": "2JJZ3N7SJ",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
